@@ -1,0 +1,8 @@
+var number1 = prompt('Ingrese un numero')
+var parcednumber1 = parseInt(number1,10)
+var number2 = prompt('Ingrese otro numero')
+var parcednumber2 = parseInt(number2,10)
+console.log('la suma de los dos numeros es: ',parcednumber1+parcednumber2)
+console.log('la resta de los dos numeros es: ',parcednumber1-parcednumber2)
+console.log('la division de los dos numeros es: ',parcednumber1/parcednumber2)
+console.log('la multiplicacion de los dos numeros es: ',parcednumber1*parcednumber2)
