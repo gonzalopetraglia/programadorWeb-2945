@@ -18,11 +18,11 @@ function datosAlumno(alumno){
      'Direccion:',alumno.address && alumno.address.street+' '+alumno.address.number);
 }
 
-function buscarAlumno(name, alumnos){
+function buscarAlumno(name){
   var seEncontro=false
-  for(var i=0;i<alumnos.length;i++){
-    if(name===alumnos[i].firstName){
-      datosAlumno(alumnos[i])
+  for(var i=0;i<students.length;i++){
+    if(name===students[i].firstName){
+      datosAlumno(students[i])
       seEncontro=true
       break
     }
@@ -112,4 +112,4 @@ var students = [
 ]
 
 var name= prompt('Ingrese el nombre del alumno')
-buscarAlumno(name,students)
+buscarAlumno(name)

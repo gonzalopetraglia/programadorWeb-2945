@@ -28,11 +28,11 @@ function datosAlumno(alumno){
      'Direccion:',alumno.address && alumno.address.street, alumno.address && alumno.address.number);
 }
 
-function buscarAlumnoPorNombreOApellido(name, alumnos){
+function buscarAlumnoPorNombreOApellido(name){
   var seEncontro=false
-  for(var i=0;i<alumnos.length;i++){
-    if(name===alumnos[i].firstName||name===alumnos[i].lastName){
-      datosAlumno(alumnos[i])
+  for(var i=0;i<students.length;i++){
+    if(name===students[i].firstName||name===students[i].lastName){
+      datosAlumno(students[i])
       seEncontro=true
     }
   }
@@ -40,11 +40,11 @@ function buscarAlumnoPorNombreOApellido(name, alumnos){
     console.log('No hay resultado')
   }
 }
-function buscarAlumnosPorPromedio(prom, alumnos){
+function buscarAlumnosPorPromedio(prom){
 var seEncontro=false
-  for(var i=0;i<alumnos.length;i++){
-    if(prom <= promedio(alumnos[i].examResults)){
-      datosAlumno(alumnos[i])
+  for(var i=0;i<students.length;i++){
+    if(prom <= promedio(students[i].examResults)){
+      datosAlumno(students[i])
       seEncontro=true
     }
   }
@@ -117,8 +117,8 @@ var promedioAlumno = parseNumber()
 if(promedioAlumno===false){
   console.log('Se ingreso un promedio incorrecto');
 }else{
-  buscarAlumnosPorPromedio(promedioAlumno, students)
+  buscarAlumnosPorPromedio(promedioAlumno)
 }
 
 var textAlumno = prompt('Ingrese el nombre o apellido del alumno')
-buscarAlumnoPorNombreOApellido(textAlumno,students)
+buscarAlumnoPorNombreOApellido(textAlumno)
