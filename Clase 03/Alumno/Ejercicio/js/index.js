@@ -1,3 +1,4 @@
+//funciones
 function typeOfDay(dia){
   switch (dia) {
     case 'Lunes':
@@ -24,9 +25,18 @@ function typeOfDay(dia){
   }
 }
 
+function mostrarSaludo(){
+  var firstName = prompt('Ingrese su nombre')
+  var lastName = prompt('Ingrese su apellido')
+  console.log('Hola '+ firstName +' '+lastName)
+}
+
+//resolucion
 var day1 = prompt('Ingrese día 1')
 typeOfDay(day1)
 var day2 = prompt('Ingrese día 2')
 typeOfDay(day2)
 var day3 = prompt('Ingrese día 3')
 typeOfDay(day3)
+
+mostrarSaludo()
