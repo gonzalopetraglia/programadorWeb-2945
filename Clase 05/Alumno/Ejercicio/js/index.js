@@ -1,87 +1,114 @@
-// //Strings
+var legalAge = 25
 
-// // lenght: cantidad de caracateres en el string
-// var firstName = "Juan"
-// console.log(firstName.length)
-//
-// //typeof me dice que tipo de variable es (string/number/function/object/undefined/boolean/symbol) si es null devuelve tipo object
-// var firstName = "Juan"
-// if(typeof firstName == 'string'){
-//   console.log('es un string');
-// }
-//
-// //toString : convierte a string
-// var numero = 345
-// if(typeof numero === 'number'){
-//   numero = numero.toString()
-// }
-// if(typeof numero === 'string'){
-//   console.log('ya es un texto');
-// }
-//
-// //toLowerCase: convierte el string en minuscula
-// //toUpperCase: convierte el string en mayuscula
-// var texto = "HOLA"
-// if(typeof texto === 'string'){
-//   texto.toLowerCase()
-// }
-// console.log(texto);
-//
-//
-// //indexOf me da la posicion del caracter o el string que especifique
-// var email= 'gonzalo.petraglia@gmail.com'
-// if(typeof email === 'string'){
-//   if(email.indexOf('@')!== -1 && email.indexOf('.')!== -1){
-//     console.log('Mail incorrecto');
-//   }
-// }
-// //en este caso se busca un pedazo de string ... si ingreso Mar nos va a dar cierto
-// var name= prompt('Ingrese Nombre')
-// var dbName = 'Martin' // un supuesto dato que ya esta ingresado en la base de datos
-// if(typeof name === 'string'){
-//   if(dbName.indexOf(name) !== -1){
-//     console.log('Es el usuario');
-//   }else{
-//     console.log('No es el usuario');
-//   }
-// }
+function User (firstName, lastName, age, address) {
+  var id = Math.random()
 
-// //Split: separa el string por el texto que le pase por ejemplo un espacio y me crea un array con las partes separadas
-// var texto="hola como estas gonzalo"
-// var res = texto.split(' ')
-// console.log(res[1]);
+  this.showFullName = function () {
+    console.log(firstName + ' ' + lastName)
+  }
 
-// //Arrays
+  this.isLegalAge = function () {
+    // return age >= legalAge
+    if (age >= legalAge) {
+      return true
+    } else {
+      return false
+    }
+  }
 
- // //Para validar si es un array
- // var names = ['Gonzalo', 'Javier', 'Ines']
- // if(Array.isArray(names)){
- //   console.log('Es un Array');
- // }
+  this.getId = function () {
+    return id
+  }
+}
 
- // //toString: convierte todo el array en un string separado por comas
- // var names = ['Gonzalo', 'Javier', 'Ines']
- // console.log(names.toString());
+// var user1 = new User('Adrián', 'Ferré', 9, {
+//   street: 'Cucha cucha',
+//   number: 1234
+// })
 
- // //Join: convierte todo el array en un string separado por el texto que le pasemos
- // var names = ['Gonzalo', 'Javier', 'Ines']
- // console.log(names.join('/'));
+// user1.showFullName()
 
-// //Push: agrega una instancia al array
-//   var names = ['Gonzalo', 'Javier', 'Ines']
-//   names.push('Martin')
-//   console.log(names);
+// var isLegalAge = user1.isLegalAge()
 
-// // Splice: elimina del array dandole una posicion y cantidad a eliminar en este caso desde la poscion 1 elimina 1 lugar
-//   var names = ['Gonzalo', 'Javier', 'Ines']
-//   names.splice(1,1)
-//   console.log(names);
+// console.log(isLegalAge)
 
-  // //Splice y IndexOf: para sacar una posicion en particular usamos indexOf
-  // var names = ['Gonzalo', 'Javier', 'Ines']
-  // var name = 'Gonzalo'
-  // var index= names.indexOf(name)
-  // names.splice(index,1)
-  // console.log(names);
+// var id = user1.getId()
 
-  
+// console.log(id)
+
+var students = [
+  {
+    firstName: 'Laura',
+    lastName: 'Lopez',
+    dni: 45678987,
+    age: 28,
+    address: {
+      street: 'Cucha cucha',
+      number: 1234
+    },
+    examResults: [ 7, 5, 6, 4, 3, 2, 8 ]
+  },
+  {
+    firstName: 'Cooper',
+    lastName: 'Marshall',
+    dni: 45678989,
+    age: 7,
+    address: {
+      street: 'La Pampa',
+      number: 6754
+    },
+    examResults: [ 3, 4, 5, 6, 7, 3, 4, 5 ]
+  },
+  {
+    firstName: 'Ines',
+    lastName: 'Sotomayor',
+    dni: 45678956,
+    age: 68,
+    address: {
+      street: 'La vía',
+      number: 3737
+    },
+    examResults: [ 3, 8, 7, 5, 6, 4, 5, 4, 3 ]
+  },
+  {
+    firstName: 'Matias',
+    lastName: 'Trunzo',
+    dni: 45678943,
+    age: 3,
+    address: {
+      street: 'Zapiol',
+      number: 1819
+    },
+    examResults: [ 4, 3, 4, 5, 5, 3 ]
+  },
+  {
+    firstName: 'Pablo',
+    lastName: 'Callegari',
+    dni: 45678963,
+    age: 48,
+    address: {
+      street: 'Juan b. Justo',
+      number: 7654
+    },
+    examResults: [ 1, 2, 1, 3, 2, 4, 2, 4, 5 ]
+  },
+  {
+    firstName: 'Daniela',
+    lastName: 'Picciotto',
+    age: 125,
+    dni: 45678983,
+    examResults: [ 10, 8, 9, 7, 8, 7, 10 ]
+  }
+]
+
+for (var i = 0; i < students.length; i++) {
+  var student = students[i]
+  var objStudent = new User(
+    student.firstName,
+    student.lastName,
+    student.age,
+    student.address
+  )
+  objStudent.showFullName()
+  console.log(objStudent.isLegalAge())
+}
