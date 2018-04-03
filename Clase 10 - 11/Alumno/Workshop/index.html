@@ -23,40 +23,40 @@
             <div class="col-md-6">
                 <h3 class="text-center">Ingreso de datos</h3>
                 <form>
-                    <div class="form-row">
+                    <div id="addStudent" class="form-row">
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="firstName" placeholder="Nombre">
                         </div>
-                        <!-- <div class="form-group col-md-6">
+                        <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="lastName" placeholder="Apellido">
-                        </div> -->
+                        </div>
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="dni" placeholder="DNI">
                         </div>
-                        <!-- <div class="form-group col-md-6"> 
+                        <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="email" placeholder="E-mail">
-                        </div> -->
-                        <div class="form-group col-md-12" style="display: flex; flex-direction: column-reverse"> 
-                            <button type="button" class="btn btn-primary" id="addStudentButton">Agregar alumno</button>
+                        </div>
+                        <div class="form-group col-md-12" style="display: flex; flex-direction: column">
+                            <button type="button" class="btn btn-primary" id="addStudentButton" disabled>Agregar alumno</button>
                         </div>
                     </div>
                 </form>
                 <form>
-                    <div class="form-row">
+                    <div id="deleteStudent" class="form-row">
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="deleteDni" placeholder="DNI">
                         </div>
-                        <div class="form-group col-md-6" style="display: flex; flex-direction: column-reverse"> 
-                            <button type="button" class="btn btn-danger" id="deleteStudentButton">Eliminar alumno</button>
+                        <div class="form-group col-md-6" style="display: flex; flex-direction: column">
+                            <button type="button" class="btn btn-danger" id="deleteStudentButton" disabled>Eliminar alumno</button>
                         </div>
                     </div>
                 </form>
-                <!-- <form>
-                    <div class="form-row">
+                <form>
+                    <div id="searchStudent" class="form-row">
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="searchText" placeholder="Nombre">
                         </div>
-                        <div class="form-group col-md-6" style="display: flex; flex-direction: column-reverse"> 
+                        <div class="form-group col-md-6" style="display: flex; flex-direction: column">
                             <button type="button" class="btn btn-success" id="searchStudentButton">Buscar alumno</button>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                     <div class="col-md-12">
                         <ul id="searchList" class="list-group"></ul>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
